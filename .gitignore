@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Dataset (Veri setlerini repoya atma!)
+datasets/
+data/raw/
+data/processed/
+
+# Model Checkpoints (Ağırlık dosyalarını atma!)
+*.pth
+*.pt
+checkpoints/
+experiments/
+
+# Logs & Environment
+runs/
+.env
+.venv/
+venv/
+.idea/
+.vscode/
+*.log
