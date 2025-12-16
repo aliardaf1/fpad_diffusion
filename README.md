@@ -19,3 +19,6 @@ Projede Replay-Attack ve OULU-NPU veri setleri kullanılmaktadır.
 python -m venv venv_tf_gpu
 ## Aktive etmek için PowerSHellden 
 .\venv_tf_gpu\Scripts\Activate
+## Gerekli program kurulumları için
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install imageio[ffmpeg] facenet-pytorch opencv-python tqdm
