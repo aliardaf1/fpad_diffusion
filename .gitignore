@@ -21,3 +21,4 @@ venv/
 .idea/
 .vscode/
 *.log
+venv_tf_gpu/

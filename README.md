@@ -14,3 +14,8 @@ pip install -r requirements.txt
 
 ## Veri Setleri
 Projede Replay-Attack ve OULU-NPU veri setleri kullanılmaktadır.
+
+## GPU Ortamı oluşturmak için
+python -m venv venv_tf_gpu
+## Aktive etmek için PowerSHellden 
+.\venv_tf_gpu\Scripts\Activate
