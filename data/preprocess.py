@@ -146,8 +146,8 @@ def main():
     # Bu yolları kendi bilgisayarınızdaki "raw" veri yollarına göre güncelleyin!
     DATASETS = {
         "ReplayAttack": {
-            "root": "./data/raw/ReplayAttack",  
-            "subsets": ["train", "devel", "test"], # README.txt'ye göre standart klasörler
+            "root": "./datasets/replayattack",  
+            "subsets": ["replayattack-train/train", "replayattack-devel/devel", "replayattack-test/test"], # README.txt'ye göre standart klasörler
             "ext": "*.mov"
         },
         "OULU-NPU": {
