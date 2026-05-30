@@ -86,17 +86,6 @@ ResNet-18 modellerini eğitmek ve sentetik veriyle artırılmış (augmented) ko
 
 ---
 
-## 📈 Ana Bulgular ve Sonuçlar
-
-Detaylı performans analizi ve sonuç tablolarına **[cross_dataset_performance_analysis.md](results/cross_dataset_performance_analysis.md)** dosyasından erişebilirsiniz.
-
-*   **Difüzyon Üstünlüğü:** Replay-Attack &rarr; OULU-NPU çapraz testinde, DDPM destekli veri artırımı GAN tabanlı baseline'a göre daha yüksek genelleme başarısı sunmuştur (HTER: Baseline %41.35 &rarr; DDPM+S2S %38.92).
-*   **Doz-Etki Trendi (U-Eğrisi):** Sentetik veri miktarının aşırı artırılması (50.000 adet), sınıflandırıcının üretici modele aşırı uyum sağlamasına (generator domain overfitting) yol açarak performansı bozmaktadır. Optimal dozajlama **500 - 2000** aralığındadır.
-*   **S2S Katkısı:** DDPM'e ek olarak Spoof-to-Spoof verilerinin kullanılması AUC skorlarında **+0.053** oranında doğrudan artış sağlamıştır.
-*   **Dış Etken Direnci:** Sentetik veri artırımı, modellerin gürültü ve bulanıklık altındaki dayanıklılığını önemli ölçüde artırmıştır (OULU baseline model gürültüde tamamen çökerken, GAN/DDPM modelleri direnç göstermiştir).
-
----
-
 ## 🛠️ Kurulum ve Ortam Kurulumu
 
 ### GPU Ortamı Oluşturma ve Aktifleştirme (PowerShell)
