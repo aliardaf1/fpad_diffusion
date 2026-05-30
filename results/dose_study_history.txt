@@ -1,0 +1,52 @@
+FPAD - SENTETİK VERİ DOZ ÇALIŞMASI
+======================================================================
+
+Konfigürasyon: OULU + 2K sentetik (mikro doz)
+  Sentetik kullanılan: 2000
+  En iyi DEV AUC: 0.9998
+  Model dosyası: resnet18_oulu_dose2k_best.pth
+  Epoch geçmişi:
+    Epoch 1: loss=0.0225, AUC=0.9993, HTER@EER=%1.43
+    Epoch 2: loss=0.0060, AUC=0.9996, HTER@EER=%0.64
+    Epoch 3: loss=0.0022, AUC=0.9998, HTER@EER=%0.64
+    Epoch 4: loss=0.0031, AUC=0.9997, HTER@EER=%1.01
+    Epoch 5: loss=0.0022, AUC=0.9995, HTER@EER=%0.88
+    Epoch 6: loss=0.0022, AUC=0.9989, HTER@EER=%1.76
+----------------------------------------------------------------------
+Konfigürasyon: OULU + 8K sentetik (az doz)
+  Sentetik kullanılan: 8000
+  En iyi DEV AUC: 0.9998
+  Model dosyası: resnet18_oulu_dose8k_best.pth
+  Epoch geçmişi:
+    Epoch 1: loss=0.0226, AUC=0.9994, HTER@EER=%0.98
+    Epoch 2: loss=0.0050, AUC=0.9995, HTER@EER=%0.76
+    Epoch 3: loss=0.0032, AUC=0.9991, HTER@EER=%1.73
+    Epoch 4: loss=0.0023, AUC=0.9996, HTER@EER=%0.80
+    Epoch 5: loss=0.0029, AUC=0.9995, HTER@EER=%1.07
+    Epoch 6: loss=0.0030, AUC=0.9996, HTER@EER=%0.76
+    Epoch 7: loss=0.0006, AUC=0.9998, HTER@EER=%0.75
+    Epoch 8: loss=0.0025, AUC=0.9997, HTER@EER=%0.60
+----------------------------------------------------------------------
+Konfigürasyon: Replay + 500 sentetik (mikro doz)
+  Sentetik kullanılan: 500
+  En iyi DEV AUC: 0.9999
+  Model dosyası: resnet18_replay_dose500_best.pth
+  Epoch geçmişi:
+    Epoch 1: loss=0.0267, AUC=0.9999, HTER@EER=%0.42
+    Epoch 2: loss=0.0045, AUC=0.9998, HTER@EER=%0.37
+    Epoch 3: loss=0.0009, AUC=0.9998, HTER@EER=%0.62
+    Epoch 4: loss=0.0003, AUC=0.9980, HTER@EER=%2.00
+----------------------------------------------------------------------
+Konfigürasyon: Replay + 2K sentetik (az doz)
+  Sentetik kullanılan: 2000
+  En iyi DEV AUC: 1.0000
+  Model dosyası: resnet18_replay_dose2k_best.pth
+  Epoch geçmişi:
+    Epoch 1: loss=0.0300, AUC=0.9947, HTER@EER=%4.28
+    Epoch 2: loss=0.0104, AUC=0.9988, HTER@EER=%2.26
+    Epoch 3: loss=0.0024, AUC=0.9982, HTER@EER=%2.50
+    Epoch 4: loss=0.0010, AUC=1.0000, HTER@EER=%0.24
+    Epoch 5: loss=0.0109, AUC=0.9995, HTER@EER=%1.11
+    Epoch 6: loss=0.0067, AUC=0.9999, HTER@EER=%0.46
+    Epoch 7: loss=0.0040, AUC=0.9991, HTER@EER=%1.78
+----------------------------------------------------------------------

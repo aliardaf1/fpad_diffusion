@@ -1,0 +1,58 @@
+FPAD PROJESİ - INTRA-DATASET TEST SONUÇLARI
+==================================================
+Model: resnet18_oulu_augmented_final.pth
+Test Seti: OULU-NPU
+  - APCER (%): 1.2747
+  - BPCER (%): 3.5816
+  - HTER (%): 2.4282
+  - AUC: 0.9982
+--------------------------------------------------
+Model: resnet18_oulu_baseline_best.pth
+Test Seti: OULU-NPU
+  - APCER (%): 1.7941
+  - BPCER (%): 1.9184
+  - HTER (%): 1.8563
+  - AUC: 0.9986
+--------------------------------------------------
+Model: resnet18_oulu_gan_augmented_best.pth
+Test Seti: OULU-NPU
+  - APCER (%): 1.2923
+  - BPCER (%): 3.1122
+  - HTER (%): 2.2023
+  - AUC: 0.9969
+--------------------------------------------------
+Model: resnet18_oulu_ultimate_s2s_best.pth
+Test Seti: OULU-NPU
+  - APCER (%): 1.3876
+  - BPCER (%): 4.3469
+  - HTER (%): 2.8673
+  - AUC: 0.9981
+--------------------------------------------------
+Model: resnet18_replay_augmented_final.pth
+Test Seti: Replay-Attack
+  - APCER (%): 1.1252
+  - BPCER (%): 3.8
+  - HTER (%): 2.4626
+  - AUC: 0.9985
+--------------------------------------------------
+Model: resnet18_replay_baseline_best.pth
+Test Seti: Replay-Attack
+  - APCER (%): 2.6151
+  - BPCER (%): 0.0
+  - HTER (%): 1.3076
+  - AUC: 0.9994
+--------------------------------------------------
+Model: resnet18_replay_gan_augmented_best.pth
+Test Seti: Replay-Attack
+  - APCER (%): 2.6464
+  - BPCER (%): 0.0
+  - HTER (%): 1.3232
+  - AUC: 0.9998
+--------------------------------------------------
+Model: resnet18_replay_ultimate_s2s_best.pth
+Test Seti: Replay-Attack
+  - APCER (%): 1.0106
+  - BPCER (%): 2.85
+  - HTER (%): 1.9303
+  - AUC: 0.9989
+--------------------------------------------------

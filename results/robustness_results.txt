@@ -1,0 +1,50 @@
+FPAD PROJESİ - ROBUSTNESS (SAĞLAMLIK) TEST SONUÇLARI
+============================================================
+Model: resnet18_oulu_augmented_final.pth
+Veri Seti: OULU-NPU
+  - Clean (Temiz) HTER: %2.4282
+  - Blur (Bulanık) HTER: %16.8775
+  - Noise (Gürültülü) HTER: %43.2556
+------------------------------------------------------------
+Model: resnet18_oulu_baseline_best.pth
+Veri Seti: OULU-NPU
+  - Clean (Temiz) HTER: %1.8563
+  - Blur (Bulanık) HTER: %27.4502
+  - Noise (Gürültülü) HTER: %50.0
+------------------------------------------------------------
+Model: resnet18_oulu_gan_augmented_best.pth
+Veri Seti: OULU-NPU
+  - Clean (Temiz) HTER: %2.2023
+  - Blur (Bulanık) HTER: %13.7332
+  - Noise (Gürültülü) HTER: %30.2769
+------------------------------------------------------------
+Model: resnet18_oulu_ultimate_s2s_best.pth
+Veri Seti: OULU-NPU
+  - Clean (Temiz) HTER: %2.8673
+  - Blur (Bulanık) HTER: %20.2712
+  - Noise (Gürültülü) HTER: %48.6276
+------------------------------------------------------------
+Model: resnet18_replay_augmented_final.pth
+Veri Seti: Replay-Attack
+  - Clean (Temiz) HTER: %2.4626
+  - Blur (Bulanık) HTER: %2.844
+  - Noise (Gürültülü) HTER: %4.2907
+------------------------------------------------------------
+Model: resnet18_replay_baseline_best.pth
+Veri Seti: Replay-Attack
+  - Clean (Temiz) HTER: %1.3076
+  - Blur (Bulanık) HTER: %0.9273
+  - Noise (Gürültülü) HTER: %17.8969
+------------------------------------------------------------
+Model: resnet18_replay_gan_augmented_best.pth
+Veri Seti: Replay-Attack
+  - Clean (Temiz) HTER: %1.3232
+  - Blur (Bulanık) HTER: %1.717
+  - Noise (Gürültülü) HTER: %5.476
+------------------------------------------------------------
+Model: resnet18_replay_ultimate_s2s_best.pth
+Veri Seti: Replay-Attack
+  - Clean (Temiz) HTER: %1.9303
+  - Blur (Bulanık) HTER: %2.9743
+  - Noise (Gürültülü) HTER: %17.1833
+------------------------------------------------------------

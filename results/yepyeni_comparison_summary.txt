@@ -1,0 +1,95 @@
+FPAD - YEPYENİ RESNET MODELLERİ - ÖZET
+===============================================================================================
+
+>>> CROSS-DATASET (Çapraz Test) — TEZ İÇİN ASIL TABLO <<<
+-----------------------------------------------------------------------------------------------
+Model                                                AUC    HTER@0.5    HTER@EER
+-----------------------------------------------------------------------------------------------
+
+[OULU-NPU → Replay-Attack]
+resnet18_oulu_baseline.pth                         0.706  %   34.18  %   29.84
+resnet18_oulu_clean_ddpm_10000.pth                 0.617  %   42.09  %   40.70
+resnet18_oulu_clean_ddpm_2000.pth                  0.665  %   33.76  %   33.67
+resnet18_oulu_clean_ddpm_500.pth                   0.701  %   30.15  %   29.97
+resnet18_oulu_clean_ddpm_5000.pth                  0.632  %   37.31  %   39.23
+resnet18_oulu_clean_ddpm_s2s.pth                   0.599  %   43.00  %   39.41
+resnet18_oulu_ddpm.pth                             0.652  %   45.77  %   36.45
+resnet18_oulu_ddpm_1000.pth                        0.577  %   44.84  %   39.19
+resnet18_oulu_ddpm_500.pth                         0.649  %   40.68  %   35.65
+resnet18_oulu_ddpm_s2s.pth                         0.601  %   49.32  %   41.22
+resnet18_oulu_gan.pth                              0.699  %   36.29  %   32.23
+
+[Replay-Attack → OULU-NPU]
+resnet18_replay_baseline.pth                       0.636  %   48.95  %   41.35
+resnet18_replay_clean_ddpm_10000.pth               0.596  %   50.09  %   43.66
+resnet18_replay_clean_ddpm_2000.pth                0.582  %   50.03  %   44.00
+resnet18_replay_clean_ddpm_500.pth                 0.658  %   50.09  %   39.57
+resnet18_replay_clean_ddpm_5000.pth                0.601  %   49.57  %   43.77
+resnet18_replay_clean_ddpm_s2s.pth                 0.634  %   50.14  %   39.79
+resnet18_replay_ddpm.pth                           0.606  %   49.02  %   43.53
+resnet18_replay_ddpm_s2s.pth                       0.659  %   48.30  %   38.92
+resnet18_replay_ddpm_s2s_1000.pth                  0.586  %   48.94  %   44.48
+resnet18_replay_ddpm_s2s_1500.pth                  0.568  %   48.22  %   45.66
+resnet18_replay_ddpm_s2s_weighted.pth              0.658  %   48.47  %   39.77
+resnet18_replay_gan.pth                            0.649  %   48.31  %   39.93
+
+
+>>> INTRA-DATASET (Aynı Veri Seti) <<<
+-----------------------------------------------------------------------------------------------
+Model                                                AUC    HTER@0.5    HTER@EER
+-----------------------------------------------------------------------------------------------
+
+[OULU-NPU]
+resnet18_oulu_baseline.pth                         0.999  %    1.82  %    1.75
+resnet18_oulu_clean_ddpm_10000.pth                 0.998  %    3.47  %    2.23
+resnet18_oulu_clean_ddpm_2000.pth                  0.999  %    1.65  %    1.66
+resnet18_oulu_clean_ddpm_500.pth                   0.997  %    2.07  %    2.05
+resnet18_oulu_clean_ddpm_5000.pth                  0.998  %    1.97  %    1.91
+resnet18_oulu_clean_ddpm_s2s.pth                   0.997  %    2.29  %    2.09
+resnet18_oulu_ddpm.pth                             0.996  %    7.17  %    2.48
+resnet18_oulu_ddpm_1000.pth                        0.996  %    2.58  %    2.35
+resnet18_oulu_ddpm_500.pth                         0.998  %    2.10  %    2.06
+resnet18_oulu_ddpm_s2s.pth                         0.997  %    2.37  %    1.95
+resnet18_oulu_gan.pth                              0.998  %    4.07  %    2.07
+
+[Replay-Attack]
+resnet18_replay_baseline.pth                       1.000  %    0.25  %    0.31
+resnet18_replay_clean_ddpm_10000.pth               1.000  %    0.65  %    0.55
+resnet18_replay_clean_ddpm_2000.pth                1.000  %    1.19  %    0.51
+resnet18_replay_clean_ddpm_500.pth                 1.000  %    0.34  %    0.45
+resnet18_replay_clean_ddpm_5000.pth                1.000  %    0.12  %    0.06
+resnet18_replay_clean_ddpm_s2s.pth                 1.000  %    0.47  %    0.40
+resnet18_replay_ddpm.pth                           1.000  %    0.10  %    0.11
+resnet18_replay_ddpm_s2s.pth                       1.000  %    0.19  %    0.17
+resnet18_replay_ddpm_s2s_1000.pth                  1.000  %    0.29  %    0.27
+resnet18_replay_ddpm_s2s_1500.pth                  1.000  %    0.21  %    0.08
+resnet18_replay_ddpm_s2s_weighted.pth              1.000  %    0.17  %    0.21
+resnet18_replay_gan.pth                            1.000  %    0.38  %    0.31
+
+
+===============================================================================================
+ESKİ MODELLERLE KARŞILAŞTIRMA (referans)
+===============================================================================================
+
+Eski 8 modelin cross-dataset sonuçları (önceki comparison_summary.txt'den):
+
+[OULU → Replay-Attack]
+Model                                                AUC    HTER@EER
+resnet18_oulu_baseline_best (eski)                 0.668  %   33.97
+resnet18_oulu_gan_augmented_best (eski)            0.599  %   39.23
+resnet18_oulu_augmented_final (eski 50K DDPM)      0.545  %   44.95
+resnet18_oulu_ultimate_s2s_best (eski)             0.565  %   43.83
+
+[Replay-Attack → OULU]
+Model                                                AUC    HTER@EER
+resnet18_replay_baseline_best (eski)               0.580  %   44.18
+resnet18_replay_gan_augmented_best (eski)          0.611  %   42.27
+resnet18_replay_augmented_final (eski 50K DDPM)    0.576  %   45.40
+resnet18_replay_ultimate_s2s_best (eski)           0.569  %   46.30
+
+===============================================================================================
+DEĞERLENDİRME REHBERİ:
+- Eğer yepyeni baseline ~ eski baseline ise: training pipeline tutarlı çalışıyor
+- Eğer yepyeni augmented modeller eski 50K modellerden iyiyse: doz optimizasyonu işe yaradı
+- Eğer yepyeni DDPM > yepyeni GAN ise: hipotez doğrulandı (DDPM > GAN)
+- Eğer yepyeni DDPM+S2S > yepyeni DDPM ise: S2S katkı sağladı

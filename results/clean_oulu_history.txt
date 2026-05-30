@@ -1,0 +1,70 @@
+FPAD - TEMİZ OULU-NPU SINIFLANDIRICILARI
+===========================================================================
+
+Konfigürasyon                                             Toplam    DEV AUC
+---------------------------------------------------------------------------
+[1/5] OULU - Real + 500 TEMİZ DDPM                         41041     0.9999
+[2/5] OULU - Real + 2K TEMİZ DDPM                          42541     0.9999
+[3/5] OULU - Real + 5K TEMİZ DDPM                          45541     0.9998
+[4/5] OULU - Real + 10K TEMİZ DDPM                         50541     0.9999
+[5/5] OULU - Real + 2K TEMİZ DDPM + 500 TEMİZ S2S **EN KRİTİK**    43041     0.9998
+
+
+DETAYLI EPOCH GEÇMİŞİ
+===========================================================================
+
+
+[1/5] OULU - Real + 500 TEMİZ DDPM
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_clean_ddpm_500.pth
+  Sentetik: spoof(500)
+    Epoch 1: loss=0.0235, AUC=0.9996, HTER@EER=%0.82
+    Epoch 2: loss=0.0054, AUC=0.9996, HTER@EER=%0.72
+    Epoch 3: loss=0.0036, AUC=0.9999, HTER@EER=%0.54
+    Epoch 4: loss=0.0047, AUC=0.9997, HTER@EER=%0.85
+    Epoch 5: loss=0.0041, AUC=0.9997, HTER@EER=%0.75
+    Epoch 6: loss=0.0026, AUC=0.9965, HTER@EER=%2.80
+---------------------------------------------------------------------------
+
+[2/5] OULU - Real + 2K TEMİZ DDPM
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_clean_ddpm_2000.pth
+  Sentetik: spoof(2000)
+    Epoch 1: loss=0.0231, AUC=0.9992, HTER@EER=%1.12
+    Epoch 2: loss=0.0075, AUC=0.9997, HTER@EER=%0.82
+    Epoch 3: loss=0.0035, AUC=0.9996, HTER@EER=%0.92
+    Epoch 4: loss=0.0014, AUC=0.9999, HTER@EER=%0.38
+    Epoch 5: loss=0.0065, AUC=0.9986, HTER@EER=%1.85
+    Epoch 6: loss=0.0029, AUC=0.9998, HTER@EER=%0.32
+    Epoch 7: loss=0.0011, AUC=0.9999, HTER@EER=%0.36
+    Epoch 8: loss=0.0049, AUC=0.9982, HTER@EER=%1.99
+---------------------------------------------------------------------------
+
+[3/5] OULU - Real + 5K TEMİZ DDPM
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_clean_ddpm_5000.pth
+  Sentetik: spoof(5000)
+    Epoch 1: loss=0.0243, AUC=0.9997, HTER@EER=%0.71
+    Epoch 2: loss=0.0053, AUC=0.9995, HTER@EER=%1.08
+    Epoch 3: loss=0.0047, AUC=0.9998, HTER@EER=%0.53
+    Epoch 4: loss=0.0054, AUC=0.9990, HTER@EER=%1.39
+    Epoch 5: loss=0.0041, AUC=0.9996, HTER@EER=%0.79
+    Epoch 6: loss=0.0022, AUC=0.9995, HTER@EER=%1.06
+---------------------------------------------------------------------------
+
+[4/5] OULU - Real + 10K TEMİZ DDPM
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_clean_ddpm_10000.pth
+  Sentetik: spoof(10000)
+    Epoch 1: loss=0.0226, AUC=0.9999, HTER@EER=%0.56
+    Epoch 2: loss=0.0060, AUC=0.9998, HTER@EER=%0.66
+    Epoch 3: loss=0.0036, AUC=0.9996, HTER@EER=%0.87
+    Epoch 4: loss=0.0037, AUC=0.9996, HTER@EER=%0.89
+---------------------------------------------------------------------------
+
+[5/5] OULU - Real + 2K TEMİZ DDPM + 500 TEMİZ S2S **EN KRİTİK**
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_clean_ddpm_s2s.pth
+  Sentetik: spoof(2000), OULU-NPU(500)
+    Epoch 1: loss=0.0249, AUC=0.9997, HTER@EER=%0.54
+    Epoch 2: loss=0.0061, AUC=0.9939, HTER@EER=%3.96
+    Epoch 3: loss=0.0036, AUC=0.9998, HTER@EER=%0.83
+    Epoch 4: loss=0.0042, AUC=0.9990, HTER@EER=%1.43
+    Epoch 5: loss=0.0023, AUC=0.9997, HTER@EER=%0.57
+    Epoch 6: loss=0.0044, AUC=0.9991, HTER@EER=%0.94
+---------------------------------------------------------------------------

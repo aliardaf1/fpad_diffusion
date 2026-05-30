@@ -28,11 +28,9 @@ def get_label(video_path, dataset_name):
     filename = os.path.basename(video_path)
     
     if dataset_name == "ReplayAttack":
-        # Replay-Attack: Klasör yolunda 'real' ifadesi varsa gerçektir.
-        # Örnek Path: .../train/real/client001.mov -> REAL
-        # Örnek Path: .../train/attack/fixed/print/client001.mov -> ATTACK
+        # Klasör yolunda 'real' klasörü geçiyorsa etiket 'real'dir.
+        # Örn: datasets/replayattack/replayattack-train/real/video.mov
         full_path_str = video_path.lower()
-        # Yol ayracına göre bölerek kontrol etmek daha güvenlidir
         path_parts = full_path_str.replace('\\', '/').split('/')
         
         if 'real' in path_parts:
@@ -41,22 +39,21 @@ def get_label(video_path, dataset_name):
             return 'attack'
             
     elif dataset_name == "OULU-NPU":
-        # OULU-NPU: Dosya formatı P_S_U_F.avi şeklindedir.
-        # Son rakam (File ID): 1 = Real, 2-5 = Attack (Kaynak: OULU Readme.pdf)
+        # OULU-NPU: Dosya formatı P_S_U_F.avi
+        # Son rakam (File ID): 1 = Real, 2-5 = Attack
         try:
             name_no_ext = filename.rsplit('.', 1)[0]
             parts = name_no_ext.split('_')
-            access_type = int(parts[-1]) # Son parça dosya tipidir
+            access_type = int(parts[-1]) 
             
             if access_type == 1:
                 return 'real'
             else:
                 return 'attack'
-        except Exception as e:
-            print(f"[UYARI] OULU Etiket Hatası: {filename} | Hata: {e}")
+        except Exception:
             return None 
 
-    return None # Bilinmeyen veri seti
+    return None
 
 def process_video(video_path, dataset_name, subset, label):
     """
@@ -65,29 +62,19 @@ def process_video(video_path, dataset_name, subset, label):
     video_name = os.path.basename(video_path).rsplit('.', 1)[0]
 
     # Kayıt Yolu: data/processed/DatasetAdi/subset/label/
-    # Örn: data/processed/ReplayAttack/train/real/
     save_dir = os.path.join(PROCESSED_ROOT, dataset_name, subset, label)
     ensure_dir(save_dir)
 
     try:
-        # OpenCV yerine imageio (ffmpeg backend) kullanımı daha kararlıdır
         reader = imageio.get_reader(video_path, format="ffmpeg")
     except Exception as e:
         print(f"[HATA] Video açılamadı: {video_path} | {e}")
         return
 
-    # Frame sayısını almayı dene, alamazsan sonsuz döngü (enumerate) kullan
-    try:
-        n_frames = reader.count_frames()
-    except:
-        n_frames = None
-
     for frame_idx, frame in enumerate(reader):
-        # Sadece belirli aralıklarla kare al (Downsampling)
         if frame_idx % FRAME_INTERVAL != 0:
             continue
         
-        # imageio RGB döndürür, RetinaFace RGB bekler. Sorun yok.
         img_rgb = frame
 
         # Yüz Tespiti (RetinaFace)
@@ -97,7 +84,6 @@ def process_video(video_path, dataset_name, subset, label):
             resp = {}
 
         if isinstance(resp, dict) and resp:
-            # Birden fazla yüz varsa en büyüğünü (kameraya en yakını) al
             max_area = 0
             target_face = None
 
@@ -113,21 +99,18 @@ def process_video(video_path, dataset_name, subset, label):
                 x1, y1, x2, y2 = target_face
                 h_img, w_img, _ = frame.shape
 
-                # Koordinatları görüntü sınırlarına kırp
                 x1 = max(0, x1); y1 = max(0, y1)
                 x2 = min(w_img, x2); y2 = min(h_img, y2)
 
-                # Yüzü kes
                 face_crop_rgb = frame[y1:y2, x1:x2]
 
                 if face_crop_rgb.size == 0:
                     continue
 
                 try:
-                    # 256x256 Boyutlandırma (PSD standardı)
+                    # 256x256 Boyutlandırma
                     face_resized_rgb = cv2.resize(face_crop_rgb, TARGET_SIZE)
-
-                    # Kaydetme: OpenCV BGR beklediği için RGB->BGR çeviriyoruz
+                    # RGB -> BGR (OpenCV için)
                     face_resized_bgr = cv2.cvtColor(face_resized_rgb, cv2.COLOR_RGB2BGR)
 
                     save_name = f"{video_name}_frame{frame_idx}.jpg"
@@ -139,21 +122,20 @@ def process_video(video_path, dataset_name, subset, label):
     reader.close()
 
 def main():
-    # GPU Kontrolü (Bilgi amaçlı)
+    # GPU Bilgisi
     print("Mevcut GPU Cihazları:", tf.config.list_physical_devices('GPU'))
     
     # --- VERİ SETİ YAPILANDIRMASI ---
-    # Bu yolları kendi bilgisayarınızdaki "raw" veri yollarına göre güncelleyin!
     DATASETS = {
         "ReplayAttack": {
-            "root": "./datasets/replayattack",  
-            "subsets": ["replayattack-train/train", "replayattack-devel/devel", "replayattack-test/test"], # README.txt'ye göre standart klasörler
+            "root": "./datasets/replayattack",  # Sizin klasör yapınıza göre
+            "subsets": ["replayattack-train", "replayattack-devel", "replayattack-test"], 
             "ext": "*.mov"
         },
         "OULU-NPU": {
-            "root": "./data/raw/OULU-NPU",
-            "subsets": ["Train_files", "Dev_files", "Test_files"], # OULU standart klasörleri
-            "ext": "*.avi" # OULU genellikle .avi veya .mp4'tür. Kod aşağıda ikisine de bakar.
+            "root": "./data/raw/OULU-NPU", # Burayı kendi yolunuza göre kontrol edin
+            "subsets": ["Train_files", "Dev_files", "Test_files"], 
+            "ext": "*.avi" 
         }
     }
 
@@ -162,9 +144,11 @@ def main():
 
     for dataset_name, config in DATASETS.items():
         raw_root = config["root"]
+        
+        # Klasör kontrolü
         if not os.path.exists(raw_root):
-            print(f"[UYARI] {dataset_name} kök dizini bulunamadı: {raw_root}")
-            print("Lütfen 'DATASETS' sözlüğündeki yolları kontrol edin.")
+            print(f"[UYARI] {dataset_name} ana klasörü bulunamadı: {raw_root}")
+            print("Lütfen yolun (path) doğru olduğundan ve klasör adının büyük/küçük harf uyumundan emin olun.")
             continue
             
         print(f"--- {dataset_name} İşleniyor ---")
@@ -172,26 +156,29 @@ def main():
         for subset in config["subsets"]:
             subset_path = os.path.join(raw_root, subset)
             
-            # Recursive tarama: Alt klasörlerdeki tüm videoları bulur
+            # Recursive tarama (Alt klasörlerin hepsine bakar)
             videos = glob.glob(os.path.join(subset_path, "**", config["ext"]), recursive=True)
             
-            # Eğer .avi bulamazsa .mp4 dene (OULU için)
+            # OULU için alternatif uzantı kontrolü
             if not videos and dataset_name == "OULU-NPU":
                  videos = glob.glob(os.path.join(subset_path, "**", "*.mp4"), recursive=True)
 
             print(f"Alt Küme: {subset} | Bulunan Video: {len(videos)}")
             
-            # Subset ismini standartlaştır (devel -> dev, Train_files -> train)
-            save_subset = subset.lower().replace("_files", "").replace("devel", "dev")
+            # --- ÇIKTI KLASÖRÜ DÜZENLEME (TEMİZLİK) ---
+            # replayattack-train -> train
+            # replayattack-devel -> dev
+            # Train_files -> train
+            save_subset = subset.lower() \
+                .replace("replayattack-", "") \
+                .replace("_files", "") \
+                .replace("devel", "dev")
 
             for video_path in tqdm(videos, desc=f"{dataset_name}/{save_subset}"):
                 label = get_label(video_path, dataset_name)
                 
                 if label:
                     process_video(video_path, dataset_name, save_subset, label)
-                else:
-                    # Etiket belirlenemezse (örn. bilinmeyen dosya yapısı)
-                    pass
 
     print("\n--- TÜM İŞLEMLER TAMAMLANDI ---")
 

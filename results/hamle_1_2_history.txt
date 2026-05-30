@@ -1,0 +1,56 @@
+FPAD - HAMLE 1 (OULU mikro doz) + HAMLE 2 (Replay S2S opt)
+===========================================================================
+
+Konfigürasyon                                      Toplam    DEV AUC
+---------------------------------------------------------------------------
+[HAMLE 1.1] OULU - Real + 500 DDPM (mikro doz)      41041     0.9997
+[HAMLE 1.2] OULU - Real + 1K DDPM (mikro doz)       41541     0.9995
+[HAMLE 2.1] REPLAY - Real + 2K DDPM + 1K S2S        14698     1.0000
+[HAMLE 2.2] REPLAY - Real + 2K DDPM + 1.5K S2S      15198     1.0000
+
+
+DETAYLI EPOCH GEÇMİŞİ
+===========================================================================
+
+
+[HAMLE 1.1] OULU - Real + 500 DDPM (mikro doz)
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_ddpm_500.pth
+  Sentetik: spoof(500)
+    Epoch 1: loss=0.0226, AUC=0.9991, HTER@EER=%1.08
+    Epoch 2: loss=0.0076, AUC=0.9997, HTER@EER=%0.74
+    Epoch 3: loss=0.0019, AUC=0.9994, HTER@EER=%1.42
+    Epoch 4: loss=0.0068, AUC=0.9996, HTER@EER=%0.86
+    Epoch 5: loss=0.0029, AUC=0.9994, HTER@EER=%0.92
+---------------------------------------------------------------------------
+
+[HAMLE 1.2] OULU - Real + 1K DDPM (mikro doz)
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_ddpm_1000.pth
+  Sentetik: spoof(1000)
+    Epoch 1: loss=0.0249, AUC=0.9995, HTER@EER=%0.86
+    Epoch 2: loss=0.0054, AUC=0.9991, HTER@EER=%1.59
+    Epoch 3: loss=0.0062, AUC=0.9989, HTER@EER=%1.90
+    Epoch 4: loss=0.0008, AUC=0.9992, HTER@EER=%1.06
+---------------------------------------------------------------------------
+
+[HAMLE 2.1] REPLAY - Real + 2K DDPM + 1K S2S
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_replay_ddpm_s2s_1000.pth
+  Sentetik: spoof(2000), ReplayAttack(1000)
+    Epoch 1: loss=0.0270, AUC=0.9997, HTER@EER=%0.54
+    Epoch 2: loss=0.0072, AUC=1.0000, HTER@EER=%0.18
+    Epoch 3: loss=0.0018, AUC=0.9999, HTER@EER=%0.36
+    Epoch 4: loss=0.0006, AUC=0.9999, HTER@EER=%0.42
+    Epoch 5: loss=0.0003, AUC=0.9999, HTER@EER=%0.38
+---------------------------------------------------------------------------
+
+[HAMLE 2.2] REPLAY - Real + 2K DDPM + 1.5K S2S
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_replay_ddpm_s2s_1500.pth
+  Sentetik: spoof(2000), ReplayAttack(1500)
+    Epoch 1: loss=0.0290, AUC=0.9998, HTER@EER=%0.49
+    Epoch 2: loss=0.0035, AUC=1.0000, HTER@EER=%0.20
+    Epoch 3: loss=0.0046, AUC=0.9999, HTER@EER=%0.23
+    Epoch 4: loss=0.0061, AUC=1.0000, HTER@EER=%0.32
+    Epoch 5: loss=0.0016, AUC=1.0000, HTER@EER=%0.19
+    Epoch 6: loss=0.0002, AUC=1.0000, HTER@EER=%0.07
+    Epoch 7: loss=0.0002, AUC=1.0000, HTER@EER=%0.15
+    Epoch 8: loss=0.0038, AUC=1.0000, HTER@EER=%0.03
+---------------------------------------------------------------------------

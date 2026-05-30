@@ -1,0 +1,59 @@
+FPAD - DOSE MODELLERİ CROSS-DATASET (Detaylı)
+======================================================================
+
+Model: resnet18_oulu_dose2k_best.pth
+Eğitim Seti: OULU-NPU  →  Test Seti: Replay-Attack
+  AUC: 0.6316
+  EER Threshold: 0.3179
+  EER: %35.9392
+  --- Threshold = 0.5 ---
+    APCER: %27.7245
+    BPCER: %45.8167
+    HTER:  %36.7706
+  --- Threshold = EER ---
+    APCER: %35.945
+    BPCER: %35.9333
+    HTER:  %35.9392
+----------------------------------------------------------------------
+Model: resnet18_oulu_dose8k_best.pth
+Eğitim Seti: OULU-NPU  →  Test Seti: Replay-Attack
+  AUC: 0.536
+  EER Threshold: 0.3036
+  EER: %43.8837
+  --- Threshold = 0.5 ---
+    APCER: %39.3103
+    BPCER: %49.4167
+    HTER:  %44.3635
+  --- Threshold = EER ---
+    APCER: %43.8841
+    BPCER: %43.8833
+    HTER:  %43.8837
+----------------------------------------------------------------------
+Model: resnet18_replay_dose2k_best.pth
+Eğitim Seti: Replay-Attack  →  Test Seti: OULU-NPU
+  AUC: 0.6496
+  EER Threshold: 0.0
+  EER: %38.7049
+  --- Threshold = 0.5 ---
+    APCER: %1.3676
+    BPCER: %97.4694
+    HTER:  %49.4185
+  --- Threshold = EER ---
+    APCER: %38.7057
+    BPCER: %38.7041
+    HTER:  %38.7049
+----------------------------------------------------------------------
+Model: resnet18_replay_dose500_best.pth
+Eğitim Seti: Replay-Attack  →  Test Seti: OULU-NPU
+  AUC: 0.6064
+  EER Threshold: 0.0002
+  EER: %42.8983
+  --- Threshold = 0.5 ---
+    APCER: %1.3048
+    BPCER: %98.7143
+    HTER:  %50.0096
+  --- Threshold = EER ---
+    APCER: %42.8987
+    BPCER: %42.898
+    HTER:  %42.8983
+----------------------------------------------------------------------

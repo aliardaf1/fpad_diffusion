@@ -1,0 +1,59 @@
+FPAD - DOSE MODELLERİ INTRA-DATASET (Detaylı)
+======================================================================
+
+Model: resnet18_oulu_dose2k_best.pth
+Test Seti: OULU-NPU
+  AUC: 0.9981
+  EER Threshold: 0.8433
+  EER: %2.0353
+  --- Threshold = 0.5 ---
+    APCER: %3.3198
+    BPCER: %1.0204
+    HTER:  %2.1701
+  --- Threshold = EER ---
+    APCER: %2.04
+    BPCER: %2.0306
+    HTER:  %2.0353
+----------------------------------------------------------------------
+Model: resnet18_oulu_dose8k_best.pth
+Test Seti: OULU-NPU
+  AUC: 0.9975
+  EER Threshold: 0.76
+  EER: %2.2681
+  --- Threshold = 0.5 ---
+    APCER: %2.8631
+    BPCER: %1.6224
+    HTER:  %2.2428
+  --- Threshold = EER ---
+    APCER: %2.2709
+    BPCER: %2.2653
+    HTER:  %2.2681
+----------------------------------------------------------------------
+Model: resnet18_replay_dose2k_best.pth
+Test Seti: Replay-Attack
+  AUC: 1.0
+  EER Threshold: 0.624
+  EER: %0.0886
+  --- Threshold = 0.5 ---
+    APCER: %0.125
+    BPCER: %0.0333
+    HTER:  %0.0792
+  --- Threshold = EER ---
+    APCER: %0.0938
+    BPCER: %0.0833
+    HTER:  %0.0886
+----------------------------------------------------------------------
+Model: resnet18_replay_dose500_best.pth
+Test Seti: Replay-Attack
+  AUC: 0.9999
+  EER Threshold: 0.2389
+  EER: %0.6449
+  --- Threshold = 0.5 ---
+    APCER: %0.2605
+    BPCER: %1.6667
+    HTER:  %0.9636
+  --- Threshold = EER ---
+    APCER: %0.6564
+    BPCER: %0.6333
+    HTER:  %0.6449
+----------------------------------------------------------------------

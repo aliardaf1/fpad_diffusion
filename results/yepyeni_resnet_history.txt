@@ -1,0 +1,121 @@
+FPAD - 8 RESNET KONFİGÜRASYONU EĞİTİM RAPORU
+===========================================================================
+
+Konfigürasyon                                Toplam    DEV AUC Sentetik                      
+-----------------------------------------------------------------------------------------------
+[1/8] OULU - Real Only (Baseline)             40541     0.9999 yok                           
+[2/8] OULU - Real + GAN                       42541     0.9997 gan_synthetic_oulu(2000)      
+[3/8] OULU - Real + DDPM                      42541     0.9999 spoof(2000)                   
+[4/8] OULU - Real + DDPM + S2S                43041     0.9999 spoof(2000), OULU-NPU(500)    
+[5/8] REPLAY - Real Only (Baseline)           11698     1.0000 yok                           
+[6/8] REPLAY - Real + GAN                     13698     1.0000 gan_synthetic_replay(2000)    
+[7/8] REPLAY - Real + DDPM                    13698     1.0000 spoof(2000)                   
+[8/8] REPLAY - Real + DDPM + S2S              14198     1.0000 spoof(2000), ReplayAttack(500)
+
+
+===========================================================================
+DETAYLI EPOCH GEÇMİŞİ
+===========================================================================
+
+
+[1/8] OULU - Real Only (Baseline)
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_baseline.pth
+  Real: 8003, Attack: 32538
+  Sentetik: yok
+  Epoch geçmişi:
+    Epoch 1: loss=0.0253, AUC=0.9975, HTER@0.5=%3.08, HTER@EER=%2.27
+    Epoch 2: loss=0.0046, AUC=0.9994, HTER@0.5=%1.07, HTER@EER=%1.05
+    Epoch 3: loss=0.0058, AUC=0.9996, HTER@0.5=%0.61, HTER@EER=%0.63
+    Epoch 4: loss=0.0028, AUC=0.9992, HTER@0.5=%1.42, HTER@EER=%0.90
+    Epoch 5: loss=0.0036, AUC=0.9997, HTER@0.5=%0.89, HTER@EER=%0.89
+    Epoch 6: loss=0.0036, AUC=0.9998, HTER@0.5=%0.81, HTER@EER=%0.63
+    Epoch 7: loss=0.0002, AUC=0.9999, HTER@0.5=%0.50, HTER@EER=%0.49
+    Epoch 8: loss=0.0056, AUC=0.9997, HTER@0.5=%1.63, HTER@EER=%0.61
+---------------------------------------------------------------------------
+
+[2/8] OULU - Real + GAN
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_gan.pth
+  Real: 8003, Attack: 34538
+  Sentetik: gan_synthetic_oulu(2000)
+  Epoch geçmişi:
+    Epoch 1: loss=0.0248, AUC=0.9997, HTER@0.5=%1.12, HTER@EER=%0.87
+    Epoch 2: loss=0.0087, AUC=0.9996, HTER@0.5=%0.95, HTER@EER=%0.85
+    Epoch 3: loss=0.0037, AUC=0.9987, HTER@0.5=%1.56, HTER@EER=%1.39
+    Epoch 4: loss=0.0033, AUC=0.9996, HTER@0.5=%0.80, HTER@EER=%0.83
+---------------------------------------------------------------------------
+
+[3/8] OULU - Real + DDPM
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_ddpm.pth
+  Real: 8003, Attack: 34538
+  Sentetik: spoof(2000)
+  Epoch geçmişi:
+    Epoch 1: loss=0.0241, AUC=0.9999, HTER@0.5=%1.65, HTER@EER=%0.71
+    Epoch 2: loss=0.0061, AUC=0.9997, HTER@0.5=%0.54, HTER@EER=%0.57
+    Epoch 3: loss=0.0061, AUC=0.9998, HTER@0.5=%0.73, HTER@EER=%0.56
+    Epoch 4: loss=0.0028, AUC=0.9988, HTER@0.5=%1.89, HTER@EER=%1.56
+---------------------------------------------------------------------------
+
+[4/8] OULU - Real + DDPM + S2S
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_oulu_ddpm_s2s.pth
+  Real: 8003, Attack: 35038
+  Sentetik: spoof(2000), OULU-NPU(500)
+  Epoch geçmişi:
+    Epoch 1: loss=0.0253, AUC=0.9999, HTER@0.5=%1.26, HTER@EER=%0.70
+    Epoch 2: loss=0.0052, AUC=0.9997, HTER@0.5=%1.54, HTER@EER=%0.59
+    Epoch 3: loss=0.0031, AUC=0.9998, HTER@0.5=%1.29, HTER@EER=%0.57
+    Epoch 4: loss=0.0047, AUC=0.9998, HTER@0.5=%0.88, HTER@EER=%0.63
+---------------------------------------------------------------------------
+
+[5/8] REPLAY - Real Only (Baseline)
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_replay_baseline.pth
+  Real: 4500, Attack: 7198
+  Sentetik: yok
+  Epoch geçmişi:
+    Epoch 1: loss=0.0306, AUC=0.9989, HTER@0.5=%10.77, HTER@EER=%1.75
+    Epoch 2: loss=0.0038, AUC=0.9998, HTER@0.5=%2.60, HTER@EER=%0.69
+    Epoch 3: loss=0.0045, AUC=1.0000, HTER@0.5=%2.66, HTER@EER=%0.27
+    Epoch 4: loss=0.0005, AUC=1.0000, HTER@0.5=%1.83, HTER@EER=%0.22
+    Epoch 5: loss=0.0031, AUC=0.9997, HTER@0.5=%6.33, HTER@EER=%0.96
+    Epoch 6: loss=0.0014, AUC=1.0000, HTER@0.5=%3.16, HTER@EER=%0.19
+    Epoch 7: loss=0.0018, AUC=0.9993, HTER@0.5=%2.08, HTER@EER=%0.76
+    Epoch 8: loss=0.0001, AUC=0.9995, HTER@0.5=%3.47, HTER@EER=%0.72
+---------------------------------------------------------------------------
+
+[6/8] REPLAY - Real + GAN
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_replay_gan.pth
+  Real: 4500, Attack: 9198
+  Sentetik: gan_synthetic_replay(2000)
+  Epoch geçmişi:
+    Epoch 1: loss=0.0331, AUC=0.9990, HTER@0.5=%5.66, HTER@EER=%1.29
+    Epoch 2: loss=0.0095, AUC=0.9984, HTER@0.5=%3.32, HTER@EER=%1.63
+    Epoch 3: loss=0.0024, AUC=0.9947, HTER@0.5=%6.98, HTER@EER=%4.29
+    Epoch 4: loss=0.0017, AUC=1.0000, HTER@0.5=%0.77, HTER@EER=%0.24
+    Epoch 5: loss=0.0127, AUC=0.9999, HTER@0.5=%2.24, HTER@EER=%0.30
+    Epoch 6: loss=0.0044, AUC=0.9997, HTER@0.5=%0.92, HTER@EER=%1.05
+    Epoch 7: loss=0.0057, AUC=1.0000, HTER@0.5=%0.73, HTER@EER=%0.15
+    Epoch 8: loss=0.0020, AUC=0.9998, HTER@0.5=%3.48, HTER@EER=%0.46
+---------------------------------------------------------------------------
+
+[7/8] REPLAY - Real + DDPM
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_replay_ddpm.pth
+  Real: 4500, Attack: 9198
+  Sentetik: spoof(2000)
+  Epoch geçmişi:
+    Epoch 1: loss=0.0339, AUC=0.9984, HTER@0.5=%4.83, HTER@EER=%2.00
+    Epoch 2: loss=0.0117, AUC=1.0000, HTER@0.5=%0.47, HTER@EER=%0.31
+    Epoch 3: loss=0.0015, AUC=1.0000, HTER@0.5=%2.49, HTER@EER=%0.20
+    Epoch 4: loss=0.0020, AUC=0.9999, HTER@0.5=%2.52, HTER@EER=%0.24
+    Epoch 5: loss=0.0118, AUC=0.9976, HTER@0.5=%3.77, HTER@EER=%3.17
+    Epoch 6: loss=0.0181, AUC=0.9999, HTER@0.5=%2.33, HTER@EER=%0.49
+---------------------------------------------------------------------------
+
+[8/8] REPLAY - Real + DDPM + S2S
+  Model: /home/undergrad25_1/Desktop/fpad_diffusion/Calculations/yepyeni_resnet/resnet18_replay_ddpm_s2s.pth
+  Real: 4500, Attack: 9698
+  Sentetik: spoof(2000), ReplayAttack(500)
+  Epoch geçmişi:
+    Epoch 1: loss=0.0285, AUC=1.0000, HTER@0.5=%1.69, HTER@EER=%0.16
+    Epoch 2: loss=0.0034, AUC=0.9997, HTER@0.5=%8.09, HTER@EER=%0.46
+    Epoch 3: loss=0.0025, AUC=0.9998, HTER@0.5=%0.85, HTER@EER=%0.46
+    Epoch 4: loss=0.0022, AUC=0.9999, HTER@0.5=%0.76, HTER@EER=%0.27
+---------------------------------------------------------------------------

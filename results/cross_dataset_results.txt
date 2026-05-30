@@ -1,0 +1,58 @@
+FPAD PROJESİ - CROSS-DATASET (ÇAPRAZ) TEST SONUÇLARI
+==================================================
+Model Dosyası: resnet18_oulu_augmented_final.pth
+Eğitim Seti: OULU-NPU | Test Edilen Set: Replay-Attack
+  - APCER (%): 6.5222
+  - BPCER (%): 90.4333
+  - HTER (%): 48.4778
+  - AUC: 0.5453
+--------------------------------------------------
+Model Dosyası: resnet18_oulu_baseline_best.pth
+Eğitim Seti: OULU-NPU | Test Edilen Set: Replay-Attack
+  - APCER (%): 1.8962
+  - BPCER (%): 83.2333
+  - HTER (%): 42.5648
+  - AUC: 0.6679
+--------------------------------------------------
+Model Dosyası: resnet18_oulu_gan_augmented_best.pth
+Eğitim Seti: OULU-NPU | Test Edilen Set: Replay-Attack
+  - APCER (%): 21.4836
+  - BPCER (%): 52.5333
+  - HTER (%): 37.0085
+  - AUC: 0.599
+--------------------------------------------------
+Model Dosyası: resnet18_oulu_ultimate_s2s_best.pth
+Eğitim Seti: OULU-NPU | Test Edilen Set: Replay-Attack
+  - APCER (%): 0.0104
+  - BPCER (%): 99.6333
+  - HTER (%): 49.8219
+  - AUC: 0.5649
+--------------------------------------------------
+Model Dosyası: resnet18_replay_augmented_final.pth
+Eğitim Seti: Replay-Attack | Test Edilen Set: OULU-NPU
+  - APCER (%): 8.0423
+  - BPCER (%): 98.3878
+  - HTER (%): 53.215
+  - AUC: 0.5757
+--------------------------------------------------
+Model Dosyası: resnet18_replay_baseline_best.pth
+Eğitim Seti: Replay-Attack | Test Edilen Set: OULU-NPU
+  - APCER (%): 4.3486
+  - BPCER (%): 97.551
+  - HTER (%): 50.9498
+  - AUC: 0.5798
+--------------------------------------------------
+Model Dosyası: resnet18_replay_gan_augmented_best.pth
+Eğitim Seti: Replay-Attack | Test Edilen Set: OULU-NPU
+  - APCER (%): 3.8743
+  - BPCER (%): 95.7959
+  - HTER (%): 49.8351
+  - AUC: 0.6106
+--------------------------------------------------
+Model Dosyası: resnet18_replay_ultimate_s2s_best.pth
+Eğitim Seti: Replay-Attack | Test Edilen Set: OULU-NPU
+  - APCER (%): 4.0274
+  - BPCER (%): 98.2959
+  - HTER (%): 51.1617
+  - AUC: 0.5689
+--------------------------------------------------

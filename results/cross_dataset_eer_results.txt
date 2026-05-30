@@ -1,0 +1,143 @@
+FPAD PROJESİ - CROSS-DATASET SONUÇLAR (0.5 ve EER threshold)
+======================================================================
+
+Model: resnet18_oulu_augmented_final.pth
+Eğitim Seti: OULU-NPU  →  Test Seti: Replay-Attack
+  AUC: 0.5453
+  EER Threshold: 0.0024
+  EER: %44.9453
+  --- Threshold = 0.5 ---
+    APCER: %6.5222
+    BPCER: %90.4333
+    HTER:  %48.4778
+  --- Threshold = EER ---
+    APCER: %44.9573
+    BPCER: %44.9333
+    HTER:  %44.9453
+----------------------------------------------------------------------
+Model: resnet18_oulu_baseline_best.pth
+Eğitim Seti: OULU-NPU  →  Test Seti: Replay-Attack
+  AUC: 0.6679
+  EER Threshold: 0.0109
+  EER: %33.966
+  --- Threshold = 0.5 ---
+    APCER: %1.8962
+    BPCER: %83.2333
+    HTER:  %42.5648
+  --- Threshold = EER ---
+    APCER: %33.9654
+    BPCER: %33.9667
+    HTER:  %33.966
+----------------------------------------------------------------------
+Model: resnet18_oulu_gan_augmented_best.pth
+Eğitim Seti: OULU-NPU  →  Test Seti: Replay-Attack
+  AUC: 0.599
+  EER Threshold: 0.004
+  EER: %39.227
+  --- Threshold = 0.5 ---
+    APCER: %21.4836
+    BPCER: %52.5333
+    HTER:  %37.0085
+  --- Threshold = EER ---
+    APCER: %39.2373
+    BPCER: %39.2167
+    HTER:  %39.227
+----------------------------------------------------------------------
+Model: resnet18_oulu_subsample_best.pth
+Eğitim Seti: OULU-NPU  →  Test Seti: Replay-Attack
+  AUC: 0.5678
+  EER Threshold: 0.0056
+  EER: %43.0211
+  --- Threshold = 0.5 ---
+    APCER: %3.1048
+    BPCER: %99.9667
+    HTER:  %51.5357
+  --- Threshold = EER ---
+    APCER: %43.009
+    BPCER: %43.0333
+    HTER:  %43.0211
+----------------------------------------------------------------------
+Model: resnet18_oulu_ultimate_s2s_best.pth
+Eğitim Seti: OULU-NPU  →  Test Seti: Replay-Attack
+  AUC: 0.5649
+  EER Threshold: 0.0
+  EER: %43.8348
+  --- Threshold = 0.5 ---
+    APCER: %0.0104
+    BPCER: %99.6333
+    HTER:  %49.8219
+  --- Threshold = EER ---
+    APCER: %43.8529
+    BPCER: %43.8167
+    HTER:  %43.8348
+----------------------------------------------------------------------
+Model: resnet18_replay_augmented_final.pth
+Eğitim Seti: Replay-Attack  →  Test Seti: OULU-NPU
+  AUC: 0.5757
+  EER Threshold: 0.0
+  EER: %45.3955
+  --- Threshold = 0.5 ---
+    APCER: %8.0423
+    BPCER: %98.3878
+    HTER:  %53.215
+  --- Threshold = EER ---
+    APCER: %45.3829
+    BPCER: %45.4082
+    HTER:  %45.3955
+----------------------------------------------------------------------
+Model: resnet18_replay_baseline_best.pth
+Eğitim Seti: Replay-Attack  →  Test Seti: OULU-NPU
+  AUC: 0.5798
+  EER Threshold: 0.0001
+  EER: %44.1848
+  --- Threshold = 0.5 ---
+    APCER: %4.3486
+    BPCER: %97.551
+    HTER:  %50.9498
+  --- Threshold = EER ---
+    APCER: %44.186
+    BPCER: %44.1837
+    HTER:  %44.1848
+----------------------------------------------------------------------
+Model: resnet18_replay_gan_augmented_best.pth
+Eğitim Seti: Replay-Attack  →  Test Seti: OULU-NPU
+  AUC: 0.6106
+  EER Threshold: 0.0
+  EER: %42.2658
+  --- Threshold = 0.5 ---
+    APCER: %3.8743
+    BPCER: %95.7959
+    HTER:  %49.8351
+  --- Threshold = EER ---
+    APCER: %42.2664
+    BPCER: %42.2653
+    HTER:  %42.2658
+----------------------------------------------------------------------
+Model: resnet18_replay_subsample_best.pth
+Eğitim Seti: Replay-Attack  →  Test Seti: OULU-NPU
+  AUC: 0.5474
+  EER Threshold: 0.0
+  EER: %46.5264
+  --- Threshold = 0.5 ---
+    APCER: %2.4064
+    BPCER: %99.1735
+    HTER:  %50.7899
+  --- Threshold = EER ---
+    APCER: %46.5221
+    BPCER: %46.5306
+    HTER:  %46.5264
+----------------------------------------------------------------------
+Model: resnet18_replay_ultimate_s2s_best.pth
+Eğitim Seti: Replay-Attack  →  Test Seti: OULU-NPU
+  AUC: 0.5689
+  EER Threshold: 0.0
+  EER: %46.2986
+  --- Threshold = 0.5 ---
+    APCER: %4.0274
+    BPCER: %98.2959
+    HTER:  %51.1617
+  --- Threshold = EER ---
+    APCER: %46.3013
+    BPCER: %46.2959
+    HTER:  %46.2986
+----------------------------------------------------------------------

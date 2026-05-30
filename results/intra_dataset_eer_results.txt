@@ -1,0 +1,143 @@
+FPAD PROJESİ - INTRA-DATASET SONUÇLAR (0.5 ve EER threshold)
+======================================================================
+
+Model: resnet18_oulu_augmented_final.pth
+Test Seti: OULU-NPU
+  AUC: 0.9982
+  EER Threshold: 0.2026
+  EER: %2.4199
+  --- Threshold = 0.5 ---
+    APCER: %1.2747
+    BPCER: %3.5816
+    HTER:  %2.4282
+  --- Threshold = EER ---
+    APCER: %2.4215
+    BPCER: %2.4184
+    HTER:  %2.4199
+----------------------------------------------------------------------
+Model: resnet18_oulu_baseline_best.pth
+Test Seti: OULU-NPU
+  AUC: 0.9986
+  EER Threshold: 0.4715
+  EER: %1.881
+  --- Threshold = 0.5 ---
+    APCER: %1.7941
+    BPCER: %1.9184
+    HTER:  %1.8563
+  --- Threshold = EER ---
+    APCER: %1.8845
+    BPCER: %1.8776
+    HTER:  %1.881
+----------------------------------------------------------------------
+Model: resnet18_oulu_gan_augmented_best.pth
+Test Seti: OULU-NPU
+  AUC: 0.9969
+  EER Threshold: 0.1017
+  EER: %2.1796
+  --- Threshold = 0.5 ---
+    APCER: %1.2923
+    BPCER: %3.1122
+    HTER:  %2.2023
+  --- Threshold = EER ---
+    APCER: %2.1755
+    BPCER: %2.1837
+    HTER:  %2.1796
+----------------------------------------------------------------------
+Model: resnet18_oulu_subsample_best.pth
+Test Seti: OULU-NPU
+  AUC: 0.9813
+  EER Threshold: 0.5916
+  EER: %6.9334
+  --- Threshold = 0.5 ---
+    APCER: %7.7437
+    BPCER: %5.9592
+    HTER:  %6.8514
+  --- Threshold = EER ---
+    APCER: %6.9382
+    BPCER: %6.9286
+    HTER:  %6.9334
+----------------------------------------------------------------------
+Model: resnet18_oulu_ultimate_s2s_best.pth
+Test Seti: OULU-NPU
+  AUC: 0.9981
+  EER Threshold: 0.1195
+  EER: %2.1239
+  --- Threshold = 0.5 ---
+    APCER: %1.3876
+    BPCER: %4.3469
+    HTER:  %2.8673
+  --- Threshold = EER ---
+    APCER: %2.1254
+    BPCER: %2.1224
+    HTER:  %2.1239
+----------------------------------------------------------------------
+Model: resnet18_replay_augmented_final.pth
+Test Seti: Replay-Attack
+  AUC: 0.9985
+  EER Threshold: 0.1178
+  EER: %1.7762
+  --- Threshold = 0.5 ---
+    APCER: %1.1252
+    BPCER: %3.8
+    HTER:  %2.4626
+  --- Threshold = EER ---
+    APCER: %1.8025
+    BPCER: %1.75
+    HTER:  %1.7762
+----------------------------------------------------------------------
+Model: resnet18_replay_baseline_best.pth
+Test Seti: Replay-Attack
+  AUC: 0.9994
+  EER Threshold: 0.9566
+  EER: %0.9678
+  --- Threshold = 0.5 ---
+    APCER: %2.6151
+    BPCER: %0.0
+    HTER:  %1.3076
+  --- Threshold = EER ---
+    APCER: %0.969
+    BPCER: %0.9667
+    HTER:  %0.9678
+----------------------------------------------------------------------
+Model: resnet18_replay_gan_augmented_best.pth
+Test Seti: Replay-Attack
+  AUC: 0.9998
+  EER Threshold: 0.9957
+  EER: %0.6386
+  --- Threshold = 0.5 ---
+    APCER: %2.6464
+    BPCER: %0.0
+    HTER:  %1.3232
+  --- Threshold = EER ---
+    APCER: %0.5939
+    BPCER: %0.6833
+    HTER:  %0.6386
+----------------------------------------------------------------------
+Model: resnet18_replay_subsample_best.pth
+Test Seti: Replay-Attack
+  AUC: 0.9976
+  EER Threshold: 0.0092
+  EER: %3.017
+  --- Threshold = 0.5 ---
+    APCER: %0.3438
+    BPCER: %10.2167
+    HTER:  %5.2802
+  --- Threshold = EER ---
+    APCER: %3.0006
+    BPCER: %3.0333
+    HTER:  %3.017
+----------------------------------------------------------------------
+Model: resnet18_replay_ultimate_s2s_best.pth
+Test Seti: Replay-Attack
+  AUC: 0.9989
+  EER Threshold: 0.0483
+  EER: %2.3013
+  --- Threshold = 0.5 ---
+    APCER: %1.0106
+    BPCER: %2.85
+    HTER:  %1.9303
+  --- Threshold = EER ---
+    APCER: %2.3026
+    BPCER: %2.3
+    HTER:  %2.3013
+----------------------------------------------------------------------

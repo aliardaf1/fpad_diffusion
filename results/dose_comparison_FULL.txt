@@ -1,0 +1,77 @@
+FPAD - TÜM MODELLER KARŞILAŞTIRMA (Eski + Yeni Dose)
+===============================================================================================
+
+>>> CROSS-DATASET (Çapraz Test) — TEZİN ANA TABLOSU <<<
+-----------------------------------------------------------------------------------------------
+Model                                               AUC    HTER@0.5    HTER@EER
+-----------------------------------------------------------------------------------------------
+
+[OULU → Replay-Attack]
+resnet18_oulu_baseline_best                       0.668  %   42.56  %   33.97
+resnet18_oulu_dose2k_best.pth                     0.632  %   36.77  %   35.94  ← YENİ
+resnet18_oulu_dose8k_best.pth                     0.536  %   44.36  %   43.88  ← YENİ
+resnet18_oulu_subsample_best                      0.568  %   51.54  %   43.02
+resnet18_oulu_augmented_final                     0.545  %   48.48  %   44.95
+resnet18_oulu_gan_augmented_best                  0.599  %   37.01  %   39.23
+resnet18_oulu_ultimate_s2s_best                   0.565  %   49.82  %   43.83
+
+[Replay-Attack → OULU]
+resnet18_replay_baseline_best                     0.580  %   50.95  %   44.18
+resnet18_replay_dose500_best.pth                  0.606  %   50.01  %   42.90  ← YENİ
+resnet18_replay_dose2k_best.pth                   0.650  %   49.42  %   38.70  ← YENİ
+resnet18_replay_subsample_best                    0.547  %   50.79  %   46.53
+resnet18_replay_augmented_final                   0.576  %   53.22  %   45.40
+resnet18_replay_gan_augmented_best                0.611  %   49.84  %   42.27
+resnet18_replay_ultimate_s2s_best                 0.569  %   51.16  %   46.30
+
+
+===============================================================================================
+DOZ-ETKİ EĞRİSİ (Cross-AUC vs Sentetik Miktar)
+===============================================================================================
+
+[OULU → Replay-Attack]
+   Sentetik Miktar   Cross-AUC   Cross-HTER@EER  Model
+-----------------------------------------------------------------------------------------------
+                 0       0.668  %        33.97  resnet18_oulu_baseline_best
+              2000       0.632  %        35.94  resnet18_oulu_dose2k_best.pth  ← YENİ
+              8000       0.536  %        43.88  resnet18_oulu_dose8k_best.pth  ← YENİ
+             16000       0.568  %        43.02  resnet18_oulu_subsample_best
+             50000       0.545  %        44.95  resnet18_oulu_augmented_final
+
+[Replay-Attack → OULU]
+   Sentetik Miktar   Cross-AUC   Cross-HTER@EER  Model
+-----------------------------------------------------------------------------------------------
+                 0       0.580  %        44.18  resnet18_replay_baseline_best
+               500       0.606  %        42.90  resnet18_replay_dose500_best.pth  ← YENİ
+              2000       0.650  %        38.70  resnet18_replay_dose2k_best.pth  ← YENİ
+              3600       0.547  %        46.53  resnet18_replay_subsample_best
+             50000       0.576  %        45.40  resnet18_replay_augmented_final
+
+
+===============================================================================================
+>>> INTRA-DATASET (Tamlık için) <<<
+-----------------------------------------------------------------------------------------------
+Model                                               AUC    HTER@0.5    HTER@EER
+-----------------------------------------------------------------------------------------------
+resnet18_oulu_baseline_best                       0.999  %    1.86  %    1.88
+resnet18_oulu_augmented_final                     0.998  %    2.43  %    2.42
+resnet18_oulu_gan_augmented_best                  0.997  %    2.20  %    2.18
+resnet18_oulu_ultimate_s2s_best                   0.998  %    2.87  %    2.12
+resnet18_oulu_subsample_best                      0.981  %    6.85  %    6.93
+resnet18_replay_baseline_best                     0.999  %    1.31  %    0.97
+resnet18_replay_augmented_final                   0.999  %    2.46  %    1.78
+resnet18_replay_gan_augmented_best                1.000  %    1.32  %    0.64
+resnet18_replay_ultimate_s2s_best                 0.999  %    1.93  %    2.30
+resnet18_replay_subsample_best                    0.998  %    5.28  %    3.02
+resnet18_oulu_dose2k_best.pth                     0.998  %    2.17  %    2.04  ← YENİ
+resnet18_oulu_dose8k_best.pth                     0.998  %    2.24  %    2.27  ← YENİ
+resnet18_replay_dose2k_best.pth                   1.000  %    0.08  %    0.09  ← YENİ
+resnet18_replay_dose500_best.pth                  1.000  %    0.96  %    0.64  ← YENİ
+
+===============================================================================================
+YORUM:
+- Doz-etki eğrisinde sentetik miktar arttıkça Cross-AUC nasıl değişiyor?
+- Mikro doz (2K/500) baseline'ı geçiyor mu?
+- Eğer trend monotonik (sürekli azalan) ise: 'çok veri kötü'
+- Eğer U-şeklinde ise: 'optimal doz var'
+- Eğer baseline en yüksekse: 'hiç sentetik veri eklemeyin'
